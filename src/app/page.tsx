@@ -3,32 +3,32 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono">
-<div className="z-10 w-full max-w-5xl font-mono text-sm">
-  <div className="flex flex-col lg:flex-row items-center justify-between">
-    <div className="flex-1">
-      <h1>Egill Smári Snorrason</h1>
-    </div>
-    <div className="flex-1 flex justify-end space-x-4 mt-4 lg:mt-0">
-      <a
-        className="cursor-pointer"
-        target="blank"
-        href="https://www.linkedin.com/in/egill-sm%C3%A1ri-snorrason-260784216/"
-      >
-        <Image src="/linkedin.png" width={25} height={25} alt="logo" />
-      </a>
-      <a
-        className="cursor-pointer"
-        target="blank"
-        href="https://github.com/egillsmari"
-      >
-        <Image src="/github.png" width={25} height={25} alt="logo" />
-      </a>
-    </div>
-  </div>
-</div>
+      <div className="z-10 w-full max-w-5xl font-mono text-sm">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          <div className="flex-1">
+            <h1>Egill Smári Snorrason</h1>
+          </div>
+          <div className="flex-1 flex justify-end space-x-4 mt-4 lg:mt-0">
+            <a
+              className="cursor-pointer"
+              target="blank"
+              href="https://www.linkedin.com/in/egill-sm%C3%A1ri-snorrason-260784216/"
+            >
+              <Image src="/linkedin.png" width={25} height={25} alt="logo" />
+            </a>
+            <a
+              className="cursor-pointer"
+              target="blank"
+              href="https://github.com/egillsmari"
+            >
+              <Image src="/github.png" width={25} height={25} alt="logo" />
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="flex justify-center items-center my-4">
         <Image
-          src="/me3.jpg"
+          src="/egill.png"
           width={200}
           height={200}
           alt="centered image of me"
@@ -44,6 +44,7 @@ export default function Home() {
             software development and my expertise lies in frontend development.
             I thirve in fast-paced environments and I am always looking for new
             challenges to improve my skills as a developer.
+            
           </p>
         </div>
         <div className="text-center">
@@ -60,7 +61,7 @@ export default function Home() {
               </h3>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                 I currently work at Landsbankinn on the Landsbankinn mobile app,
-                online bank, and multiple other websites.
+                online bank, and multiple other websites. In addition to my software development responsibilities, I have also led the party planning committee and overseen the planning of multiple events.
               </p>
             </li>
             <li className="mb-10 ms-4">
@@ -73,7 +74,7 @@ export default function Home() {
               </h3>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                 Worked part-time at Klappir developing and maintaining their
-                marketing website.
+                marketing website with a focus on SEO.
               </p>
             </li>
             <li className="mb-10 ms-4">
@@ -192,12 +193,8 @@ export default function Home() {
               <p className="me-4 md:me-6 ">Apple & Google developer console</p>
             </li>
             <li>
-              <p className="me-4 md:me-6">Python</p>
-            </li>
-            <li>
               <p className="me-4 md:me-6 ">C#</p>
             </li>
-
           </ul>
         </div>
         <div className="text-center">
@@ -221,7 +218,7 @@ export default function Home() {
             <a
               className="underline underline-offset-2 text-white"
               href="https://skemman.is/bitstream/1946/41884/4/final-report.pdf"
-              target='blank'
+              target="blank"
             >
               here
             </a>
@@ -240,11 +237,11 @@ export default function Home() {
             <li className="pb-2">
               <a
                 className="underline underline-offset-2 text-white font-bold"
-                href="https://egillsmari.itch.io/track-drawer"
+                href="https://sidetrack.ink/"
               >
                 SideTrack
               </a>
-              &nbsp;is 2d platformer and the mobile app is currently in beta!
+              &nbsp;is 2d platformer and the mobile app is available on all app stores
             </li>
             <li className="pb-2">
               <a
@@ -253,8 +250,7 @@ export default function Home() {
               >
                 Eli-studios
               </a>
-              &nbsp;is a website that sells jewelry and is currently in
-              development
+              &nbsp;Portfolio website for the artist Eli
             </li>
             <li className="pb-2">
               <a
@@ -263,7 +259,7 @@ export default function Home() {
               >
                 Rannveig Óla
               </a>
-              &nbsp;is a portfolio website
+              &nbsp;is a portfolio website for the artist Rannveig Óla
             </li>
           </ul>
         </div>
