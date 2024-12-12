@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Egill Smári Snorrason
 
-## Getting Started
+Hi there!
 
-First, run the development server:
+## About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+My name is Egill and I'm a 26-year-old software developer from Iceland. I have just over two years of experience in the field of software development and my expertise lies in frontend development. I thrive in fast-paced environments and I am always looking for new challenges to improve my skills as a developer.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Career
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend Developer | Landsbankinn** (June 2022 - Present)
+  - Working on the Landsbankinn mobile app, online bank, and multiple other websites.
+  - Led the party planning committee and overseen the planning of multiple events.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Frontend Developer | Klappir** (March 2022 - June 2022)
+  - Developed and maintained the marketing website with a focus on SEO.
 
-## Learn More
+- **Intern | Arionbanki Automation Department** (January 2022 - March 2022)
+  - Worked on a data discovery tool for the customer experience department.
 
-To learn more about Next.js, take a look at the following resources:
+- **Developer and QA | TReqs** (May 2021 - January 2022)
+  - Developed and tested the technical requirements tool, TReqs, used by over a hundred developers at Ericsson in Sweden.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Security Guard | Öryggismiðstöðin** (April 2018 - May 2021)
+  - Worked as a security guard while attending school, learning to work under pressure and respond quickly to situations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Education
 
-## Deploy on Vercel
+- **BSc in Computer Science** with an emphasis on Artificial Intelligence from Reykjavík University.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technical Skills and Tools
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Frontend:** React, NextJS, Tailwind, Typescript
+- **Monitoring:** Sentry, Google Analytics
+- **Backend:** GraphQL
+- **Development:** Monorepo (Yarn workspaces), Git, Python, C#, Unity
+- **Design:** CSS, Figma
+- **CMS:** Hygraph, Prismic
+- **Other:** Apple & Google developer console, Storybook
+
+## Contact
+
+- **Email:** egill98@hotmail.com
+- **Phone:** [+354 849 8824](tel:+3548498824)
