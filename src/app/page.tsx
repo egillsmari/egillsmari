@@ -1,12 +1,20 @@
 import Image from 'next/image';
 
 export default function Home() {
+  const bornDate = new Date('1998-06-09');
+  const today = new Date();
+  const ageInMs = today.getTime() - bornDate.getTime();
+  const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
+
+  const statedWorking = new Date('2022-03-28');
+  const statedWorkingInMs = today.getTime() - statedWorking.getTime();
+  const statedWorkingInYears = statedWorkingInMs / (1000 * 60 * 60 * 24 * 365.25);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono">
-      <div className="z-10 w-full max-w-5xl font-mono text-sm">
+    <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
+      <div className="z-10 w-full max-w-5xl font-mono">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="flex-1">
-            <h1>Egill Smári Snorrason</h1>
+            <h1 className="text-xl md:text-2xl font-bold">Egill Smári Snorrason</h1>
           </div>
           <div className="flex-1 flex justify-end space-x-4 mt-4 lg:mt-0">
             <a
@@ -38,82 +46,81 @@ export default function Home() {
       <div className="space-y-12 mt-8 max-w-[820px]">
         <div className="text-center">
           <h2 className="text-3xl font-bold">About me</h2>
-          <p className="mt-2 text-left">
-            My name is Egill and I&apos;m a 26 year old software developer from
-            Iceland. I have just over two years of experience in the field of
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
+            My name is Egill and I&apos;m a {ageInYears.toPrecision(3)} year old software developer from
+            Iceland. I have {statedWorkingInYears.toPrecision(3)} years of experience in the field of
             software development and my expertise lies in frontend development.
             I thirve in fast-paced environments and I am always looking for new
             challenges to improve my skills as a developer.
-            
           </p>
         </div>
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-10">Career</h2>
 
-          <ol className="relative border-s border-gray-200 dark:border-gray-700 text-left">
+          <ol className="relative border-s border-gray-200 text-left">
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 June 2022
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-white">
                 Frontend developer | Landsbankinn
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-medium text-gray-300">
                 I currently work at Landsbankinn on the Landsbankinn mobile app,
                 online bank, and multiple other websites. In addition to my software development responsibilities, I have also led the party planning committee and overseen the planning of multiple events.
               </p>
             </li>
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 March 2022
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-white">
                 Frontend developer | Klappir
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-medium text-gray-300">
                 Worked part-time at Klappir developing and maintaining their
                 marketing website with a focus on SEO.
               </p>
             </li>
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 January 2022
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-white">
                 Intern | Arionbanki automation department
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-medium text-gray-300">
                 As part of my education at RU, I was an intern at Arionbanki for
                 one semester where I worked on a data discovery tool for the
                 customer experience department.
               </p>
             </li>
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 May 2021
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-white">
                 Developer and QA | TReqs
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-medium text-gray-300">
                 Developed and tested the technical requirements tool, TReqs,
                 under the supervision of Grischa Liebel, Ph.D., at RU. The tool
                 is used by over a hundred developers at Ericsson in Sweden.
               </p>
             </li>
             <li className="ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 April 2018
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-white">
                 Security guard | Öryggismiðstöðin
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-medium text-gray-300">
                 With school, I worked as a security guard for Öryggismiðstöðin.
                 There I learned how to work under pressure and respond fast to
                 situations.
@@ -123,7 +130,7 @@ export default function Home() {
         </div>
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Education</h2>
-          <p className="mt-2 text-left">
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
             BSc in computer science with an emphasis on Artificial intelligence
             from Reykjavík University.
           </p>
@@ -132,7 +139,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center">
             Technical skills and tools
           </h2>
-          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between dark:text-white">
+          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
               <p className="me-4 md:me-6 ">React</p>
             </li>
@@ -146,7 +153,7 @@ export default function Home() {
               <p className="me-4 md:me-6">Typescript</p>
             </li>
           </ul>
-          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between dark:text-white">
+          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
               <p className="me-4 md:me-6 ">Sentry</p>
             </li>
@@ -160,7 +167,7 @@ export default function Home() {
               <p className="me-4 md:me-6">Monorepo (Yarn workspaces)</p>
             </li>
           </ul>
-          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between dark:text-white">
+          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
               <p className="me-4 md:me-6 ">Css</p>
             </li>
@@ -174,7 +181,7 @@ export default function Home() {
               <p className="me-4 md:me-6">Storybook</p>
             </li>
           </ul>
-          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between dark:text-white">
+          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
               <p className="me-4 md:me-6 ">Git</p>
             </li>
@@ -188,7 +195,7 @@ export default function Home() {
               <p className="me-4 md:me-6">Unity</p>
             </li>
           </ul>
-          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between dark:text-white">
+          <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
               <p className="me-4 md:me-6 ">Apple & Google developer console</p>
             </li>
@@ -199,17 +206,17 @@ export default function Home() {
         </div>
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">Contact</h2>
-          <p className="mt-2 text-left">
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
             Send me a email at egill98@hotmail.com
           </p>
-          <p className="mt-2 text-left">
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
             Or you can give me a call at &nbsp;
             <a href="tel:+354 849 8824">+354 849 8824</a>
           </p>
         </div>
         <div>
           <h2 className="text-3xl font-bold text-center">Other</h2>
-          <p className="mt-2 text-left">
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
             One of my proudest moments was making the dean list (forsetalistinn)
             at RU during my last semester and graduating with a grade of 9.2!
             I&apos;ve always had a lot of interest in AI and machine learning
@@ -224,13 +231,13 @@ export default function Home() {
             </a>
             &nbsp;if your are interested
           </p>
-          <p className="mt-2 text-left">
+          <p className="mt-2 text-left text-base md:text-sm font-medium">
             I am passionate about staying up-to-date with the latest tech
             trends. Recently, I attended the React Summit and JSNation in
             Amsterdam. I often engage in side projects to sharpen my skills and
             explore new technologies.
           </p>
-          <p className="mt-2 mb-2 text-left">
+          <p className="mt-2 mb-2 text-left text-base md:text-sm font-medium">
             Here are some of my notable Projects&apos;s
           </p>
           <ul className="list-disc ml-4">

@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import './globals.css'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Egill Smári",
-  description: "Personal website for software developer Egill Smári Snorrason",
-};
+  title: 'Egill Smári Portfolio',
+  description: 'Software developer portfolio for Egill Smári Snorrason',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      </head>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
