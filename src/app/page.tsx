@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import LanguageSwitcher from './components/LanguageSwitch';
 import { LanguageProvider, useLanguage } from './l18n';
+import { Analytics } from '@vercel/analytics/next';
 
 // Make the Home component client-side only
 export default function Home() {
@@ -28,6 +29,7 @@ function HomeContent() {
   const statedWorkingInYears = statedWorkingInMs / (1000 * 60 * 60 * 24 * 365.25);
 
   return <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
+    <Analytics />
       <div className="z-10 w-full max-w-5xl font-mono">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="flex-1">
