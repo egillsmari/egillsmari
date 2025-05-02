@@ -1,16 +1,33 @@
-import Image from 'next/image';
+'use client';
 
+import Image from 'next/image';
+import LanguageSwitcher from './components/LanguageSwitch';
+import { LanguageProvider, useLanguage } from './l18n';
+
+// Make the Home component client-side only
 export default function Home() {
+  return (
+    <LanguageProvider>
+      <HomeContent />
+    </LanguageProvider>
+  );
+}
+
+// Separate component that uses the language context
+function HomeContent() {
   const bornDate = new Date('1998-06-09');
   const today = new Date();
   const ageInMs = today.getTime() - bornDate.getTime();
   const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
+  
+  // Get language context within the component that's wrapped by LanguageProvider
+  const { t } = useLanguage();
 
   const statedWorking = new Date('2022-03-28');
   const statedWorkingInMs = today.getTime() - statedWorking.getTime();
   const statedWorkingInYears = statedWorkingInMs / (1000 * 60 * 60 * 24 * 365.25);
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
+
+  return <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
       <div className="z-10 w-full max-w-5xl font-mono">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="flex-1">
@@ -31,6 +48,7 @@ export default function Home() {
             >
               <Image src="/github.png" width={25} height={25} alt="logo" />
             </a>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
@@ -45,17 +63,13 @@ export default function Home() {
       </div>
       <div className="space-y-12 mt-8 max-w-[820px]">
         <div className="text-center">
-          <h2 className="text-3xl font-bold">About me</h2>
+          <h2 className="text-3xl font-bold">{t('about.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            My name is Egill and I&apos;m a {ageInYears.toPrecision(3)} year old software developer from
-            Iceland. I have {statedWorkingInYears.toPrecision(3)} years of experience in the field of
-            software development and my expertise lies in frontend development.
-            I thirve in fast-paced environments and I am always looking for new
-            challenges to improve my skills as a developer.
+            {t('about.description').replace('{AGE}', ageInYears.toPrecision(3)).replace('{WORKING}', statedWorkingInYears.toPrecision(2))}
           </p>
         </div>
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-10">Career</h2>
+          <h2 className="text-3xl font-bold mb-10">{t('career.title')}</h2>
 
           <ol className="relative border-s border-gray-200 text-left">
             <li className="mb-10 ms-4">
@@ -64,11 +78,22 @@ export default function Home() {
                 June 2022
               </time>
               <h3 className="text-lg font-semibold text-white">
-                Frontend developer | Landsbankinn
+                {t('job.landsbankinn.title')}
               </h3>
               <p className="text-base font-medium text-gray-300">
-                I currently work at Landsbankinn on the Landsbankinn mobile app,
-                online bank, and multiple other websites. In addition to my software development responsibilities, I have also led the party planning committee and overseen the planning of multiple events.
+                {t('job.landsbankinn.description')}
+              </p>
+            </li>
+            <li className="mb-10 ms-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
+                May 2024
+              </time>
+              <h3 className="text-lg font-semibold text-white">
+                {t('job.hus.title')}
+              </h3>
+              <p className="text-base font-medium text-gray-300">
+                {t('job.hus.description')}
               </p>
             </li>
             <li className="mb-10 ms-4">
@@ -77,11 +102,10 @@ export default function Home() {
                 March 2022
               </time>
               <h3 className="text-lg font-semibold text-white">
-                Frontend developer | Klappir
+                {t('job.klappir.title')}
               </h3>
               <p className="text-base font-medium text-gray-300">
-                Worked part-time at Klappir developing and maintaining their
-                marketing website with a focus on SEO.
+                {t('job.klappir.description')}
               </p>
             </li>
             <li className="mb-10 ms-4">
@@ -90,12 +114,10 @@ export default function Home() {
                 January 2022
               </time>
               <h3 className="text-lg font-semibold text-white">
-                Intern | Arionbanki automation department
+                {t('job.arion.title')}
               </h3>
               <p className="text-base font-medium text-gray-300">
-                As part of my education at RU, I was an intern at Arionbanki for
-                one semester where I worked on a data discovery tool for the
-                customer experience department.
+                {t('job.arion.description')}
               </p>
             </li>
             <li className="mb-10 ms-4">
@@ -104,12 +126,10 @@ export default function Home() {
                 May 2021
               </time>
               <h3 className="text-lg font-semibold text-white">
-                Developer and QA | TReqs
+                {t('job.treqs.title')}
               </h3>
               <p className="text-base font-medium text-gray-300">
-                Developed and tested the technical requirements tool, TReqs,
-                under the supervision of Grischa Liebel, Ph.D., at RU. The tool
-                is used by over a hundred developers at Ericsson in Sweden.
+                {t('job.treqs.description')}
               </p>
             </li>
             <li className="ms-4">
@@ -118,26 +138,23 @@ export default function Home() {
                 April 2018
               </time>
               <h3 className="text-lg font-semibold text-white">
-                Security guard | Öryggismiðstöðin
+                {t('job.security.title')}
               </h3>
               <p className="text-base font-medium text-gray-300">
-                With school, I worked as a security guard for Öryggismiðstöðin.
-                There I learned how to work under pressure and respond fast to
-                situations.
+                {t('job.security.description')}
               </p>
             </li>
           </ol>
         </div>
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Education</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('education.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            BSc in computer science with an emphasis on Artificial intelligence
-            from Reykjavík University.
+            {t('education.description')}
           </p>
         </div>
         <div className="">
           <h2 className="text-3xl font-bold text-center">
-            Technical skills and tools
+            {t('skills.title')}
           </h2>
           <ul className="flex list-disc flex-wrap ml-6 mt-8 items-center justify-between">
             <li>
@@ -199,79 +216,81 @@ export default function Home() {
             <li>
               <p className="me-4 md:me-6 ">Apple & Google developer console</p>
             </li>
-            <li>
-              <p className="me-4 md:me-6 ">C#</p>
-            </li>
           </ul>
         </div>
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-8">Contact</h2>
+          <h2 className="text-3xl font-bold mb-8">{t('contact.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            Send me a email at egill98@hotmail.com
+            {t('contact.email')}
           </p>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            Or you can give me a call at &nbsp;
+            {t('contact.phone')} &nbsp;
             <a href="tel:+354 849 8824">+354 849 8824</a>
           </p>
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-center">Other</h2>
+          <h2 className="text-3xl font-bold text-center">{t('other.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            One of my proudest moments was making the dean list (forsetalistinn)
-            at RU during my last semester and graduating with a grade of 9.2!
-            I&apos;ve always had a lot of interest in AI and machine learning
-            and even made a demand forecasting model for Hopp&apos;s bike fleet
-            as my final project you can read about it&nbsp;
+            {t('other.dean')}&nbsp;
             <a
               className="underline underline-offset-2 text-white"
               href="https://skemman.is/bitstream/1946/41884/4/final-report.pdf"
               target="blank"
             >
-              here
+              {t('other.here')}
             </a>
-            &nbsp;if your are interested
+            &nbsp;{t('other.if')}
           </p>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            I am passionate about staying up-to-date with the latest tech
-            trends. Recently, I attended the React Summit and JSNation in
-            Amsterdam. I often engage in side projects to sharpen my skills and
-            explore new technologies.
+            {t('other.passionate')}
           </p>
-          <p className="mt-2 mb-2 text-left text-base md:text-sm font-medium">
-            Here are some of my notable Projects&apos;s
+          <p className="mt-8 mb-2 text-left text-base md:text-sm font-medium">
+            {t('other.projects')}
           </p>
           <ul className="list-disc ml-4">
             <li className="pb-2">
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://sidetrack.ink/"
+                target='blank'
               >
                 SideTrack
               </a>
-              &nbsp;is 2d platformer and the mobile app is available on all app stores
+              &nbsp;{t('projects.sidetrack')}
             </li>
             <li className="pb-2">
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://www.eli-studios.com/"
+                target='blank'
               >
                 Eli-studios
               </a>
-              &nbsp;Portfolio website for the artist Eli
+              &nbsp;{t('projects.eli-studio')}
             </li>
             <li className="pb-2">
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://www.rannveigola.com/"
+                target='blank'
               >
                 Rannveig Óla
               </a>
-              &nbsp;is a portfolio website for the artist Rannveig Óla
+              &nbsp;  &nbsp;{t('projects.rannveig')}
+            </li>
+            <li className="pb-2">
+              <a
+              target='blank'
+                className="underline underline-offset-2 text-white font-bold"
+                href="https://www.gjaldmidlar.is/"
+              >
+                Gjaldmiðlar
+              </a>
+              &nbsp; {t('projects.gjaldmidlar')}
             </li>
           </ul>
         </div>
       </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left"></div>
     </main>
-  );
 }
