@@ -64,9 +64,9 @@ export const Map = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative">
       {/* SVG Map with overlay for highlighting */}
-      <div className="relative w-full">
+      <div className="relative ml-40">
         <div className="relative">
           <img 
             src="/vector_lodir.svg" 
