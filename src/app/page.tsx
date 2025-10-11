@@ -284,7 +284,7 @@ function HomeContent() {
               <a
               target='blank'
                 className="underline underline-offset-2 text-white font-bold"
-                href="https://www.gjaldmidlar.is/"
+                href="https://gjaldmidlar.vercel.app/"
               >
                 Gjaldmiðlar
               </a>
