@@ -101,7 +101,7 @@ const translations = {
     'other.here': 'hér',
     'other.if': 'ef þú hefur áhuga',
     'other.course':
-      'Lauk námskeiðinu "Build DeepSearch in TypeScript" hjá Matt Pocock, þar sem ég lærði að þróa framleiðslutilbúin AI forrit með áherslu á LLM agents, observability, evals og task decomposition.',
+      'Lauk námskeiðinu "Build DeepSearch in TypeScript" hjá Matt Pocock, þar sem ég lærði að þróa production ready AI forrit með áherslu á LLM agents, observability, evals og task decomposition.',
     'other.projects': 'Hér eru nokkur af persónulegum verkefnum mínum',
     'job.landsbankinn.title': 'Hugbúnaðarsérfræðingur | Landsbankinn',
     'job.landsbankinn.description':
