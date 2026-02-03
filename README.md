@@ -8,9 +8,12 @@ My name is Egill and I'm a 26-year-old software developer from Iceland. I have j
 
 ## Career
 
-- **Frontend Developer | Landsbankinn** (June 2022 - Present)
+- **Software Developer | Landsbankinn** (June 2022 - Present)
   - Working on the Landsbankinn mobile app, online bank, and multiple other websites.
-  - Led the party planning committee and overseen the planning of multiple events.
+  - Led the IT department party planning committee, organized numerous events and contributed to maintaining a positive workplace culture
+  - Part of the team that took over the front-end of TM Analytics and integrated it into the Landsbankinn platform
+  - First place in Landsbankinn Innovation Days where I built Spjallbankinn (Conversational AI in banking)
+  - Part of the AI utilization team
 
 - **Frontend Developer | Klappir** (March 2022 - June 2022)
   - Developed and maintained the marketing website with a focus on SEO.

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import LanguageSwitcher from './components/LanguageSwitch';
 import { LanguageProvider, useLanguage } from './l18n';
 import { Analytics } from '@vercel/analytics/next';
+import { useState } from 'react';
 
 // Make the Home component client-side only
 export default function Home() {
@@ -20,20 +21,24 @@ function HomeContent() {
   const today = new Date();
   const ageInMs = today.getTime() - bornDate.getTime();
   const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
-  
+
   // Get language context within the component that's wrapped by LanguageProvider
   const { t } = useLanguage();
 
   const statedWorking = new Date('2022-03-28');
   const statedWorkingInMs = today.getTime() - statedWorking.getTime();
-  const statedWorkingInYears = statedWorkingInMs / (1000 * 60 * 60 * 24 * 365.25);
+  const statedWorkingInYears =
+    statedWorkingInMs / (1000 * 60 * 60 * 24 * 365.25);
 
-  return <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
-    <Analytics />
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-8 font-mono text-base md:text-sm text-white">
+      <Analytics />
       <div className="z-10 w-full max-w-5xl font-mono">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="flex-1">
-            <h1 className="text-xl md:text-2xl font-bold">Egill Smári Snorrason</h1>
+            <h1 className="text-xl md:text-2xl font-bold">
+              Egill Smári Snorrason
+            </h1>
           </div>
           <div className="flex-1 flex justify-end space-x-4 mt-4 lg:mt-0">
             <a
@@ -67,7 +72,9 @@ function HomeContent() {
         <div className="text-center">
           <h2 className="text-3xl font-bold">{t('about.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
-            {t('about.description').replace('{AGE}', ageInYears.toPrecision(3)).replace('{WORKING}', statedWorkingInYears.toPrecision(2))}
+            {t('about.description')
+              .replace('{AGE}', ageInYears.toPrecision(3))
+              .replace('{WORKING}', statedWorkingInYears.toPrecision(2))}
           </p>
         </div>
         <div className="text-center">
@@ -75,9 +82,10 @@ function HomeContent() {
 
           <ol className="relative border-s border-gray-200 text-left">
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              {/* Larger, colored dot for main position */}
+              <div className="absolute w-4 h-4 bg-blue-500 rounded-full mt-1.5 -start-2 border-2 border-white"></div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-600">
-                June 2022
+                June 2022 - Present
               </time>
               <h3 className="text-lg font-semibold text-white">
                 {t('job.landsbankinn.title')}
@@ -85,6 +93,34 @@ function HomeContent() {
               <p className="text-base font-medium text-gray-300">
                 {t('job.landsbankinn.description')}
               </p>
+
+              {/* Sub-milestones with nested timeline */}
+              <div className="mt-4 ms-4 border-l-2 border-gray-700 pl-4">
+                <div className="mb-3 relative">
+                  <div className="absolute w-2 h-2 bg-gray-400 rounded-full -start-[1.3rem] mt-1"></div>
+                  <p className="text-sm font-medium text-gray-400">
+                    {t('job.landsbankinn.milestone1')}
+                  </p>
+                </div>
+                <div className="mb-3 relative">
+                  <div className="absolute w-2 h-2 bg-gray-400 rounded-full -start-[1.3rem] mt-1"></div>
+                  <p className="text-sm font-medium text-gray-400">
+                    {t('job.landsbankinn.milestone2')}
+                  </p>
+                </div>
+                <div className="mb-3 relative">
+                  <div className="absolute w-2 h-2 bg-gray-400 rounded-full -start-[1.3rem] mt-1"></div>
+                  <p className="text-sm font-medium text-gray-400">
+                    {t('job.landsbankinn.milestone3')}
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="absolute w-2 h-2 bg-gray-400 rounded-full -start-[1.3rem] mt-1"></div>
+                  <p className="text-sm font-medium text-gray-400">
+                    {t('job.landsbankinn.milestone4')}
+                  </p>
+                </div>
+              </div>
             </li>
             <li className="mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
@@ -243,9 +279,24 @@ function HomeContent() {
             </a>
             &nbsp;{t('other.if')}
           </p>
-          <p className="mt-2 text-left text-base md:text-sm font-medium">
-            {t('other.passionate')}
-          </p>
+          <div className="mt-6">
+            <p className="text-left text-base md:text-sm font-medium">
+              {t('other.course')}
+            </p>
+            <a
+              href="https://www.aihero.dev/cohorts/build-deepsearch-in-typescript"
+              target="blank"
+              className="block mt-3 mx-auto max-w-[600px]"
+            >
+              <Image
+                src="/Build Deepsearch in TypeScript.png"
+                width={600}
+                height={424}
+                alt="Build DeepSearch in TypeScript Certificate"
+                className="rounded-lg border border-gray-700 hover:border-blue-500 transition-colors w-full"
+              />
+            </a>
+          </div>
           <p className="mt-8 mb-2 text-left text-base md:text-sm font-medium">
             {t('other.projects')}
           </p>
@@ -254,7 +305,7 @@ function HomeContent() {
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://sidetrack.ink/"
-                target='blank'
+                target="blank"
               >
                 SideTrack
               </a>
@@ -264,7 +315,7 @@ function HomeContent() {
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://www.eli-studios.com/"
-                target='blank'
+                target="blank"
               >
                 Eli-studios
               </a>
@@ -274,15 +325,15 @@ function HomeContent() {
               <a
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://www.rannveigola.com/"
-                target='blank'
+                target="blank"
               >
                 Rannveig Óla
               </a>
-              &nbsp;  &nbsp;{t('projects.rannveig')}
+              &nbsp; &nbsp;{t('projects.rannveig')}
             </li>
             <li className="pb-2">
               <a
-              target='blank'
+                target="blank"
                 className="underline underline-offset-2 text-white font-bold"
                 href="https://www.gjaldmidlar.is/"
               >
@@ -295,4 +346,5 @@ function HomeContent() {
       </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left"></div>
     </main>
+  );
 }
