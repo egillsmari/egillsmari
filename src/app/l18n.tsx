@@ -28,6 +28,7 @@ const translations = {
       "One of my proudest moments was making the dean list (forsetalistinn) at RU during my last semester. I've always had a lot of interest in AI and machine learning and even made a demand forecasting model for Hopp's bike fleet as my final project you can read about it",
     'other.here': 'here',
     'other.if': 'if your are interested',
+    'other.coursered': 'First-aid course',
     'other.course':
       'Completed "Build DeepSearch in TypeScript" course by Matt Pocock, learning production-ready AI application development including LLM agents, observability, evals, and task decomposition patterns.',
     'other.projects': "Here are some of my notable Projects's",
@@ -80,6 +81,8 @@ const translations = {
     'projects.sidetrack':
       ' Website for the game Sidetrack, which I also developed',
     'projects.rannveig': 'Portfolio site built with Next.js and Hygraph CMS',
+    'projects.codeclip':
+      'A code snippet sharing website with an automatic syntax detector',
     'projects.eli-studio':
       'Website for Eli Studio, a design studio based in Iceland.',
   },
@@ -100,6 +103,7 @@ const translations = {
       'Eitt af því sem ég er stoltastur af er að hafa komist á forsetalistann í HR á síðustu önn minni og útskrifast með einkunnina 9,2! Ég hef alltaf haft mikinn áhuga á gervigreind og vélnámi og gerði spálíkan fyrir hjólaflota Hopp í lokaverkefni mínu, sem þú getur lesið um',
     'other.here': 'hér',
     'other.if': 'ef þú hefur áhuga',
+    'other.coursered': 'Skyndihjálparnámskeið',
     'other.course':
       'Lauk námskeiðinu "Build DeepSearch in TypeScript" hjá Matt Pocock, þar sem ég lærði að þróa production ready AI forrit með áherslu á LLM agents, observability, evals og task decomposition.',
     'other.projects': 'Hér eru nokkur af persónulegum verkefnum mínum',
@@ -150,6 +154,8 @@ const translations = {
     'projects.gjaldmidlar':
       'Gengisbreytir gerð í þeim tilgangi að læra á betur á tækni eins og Server components, App router, Data Fetching og Caching',
     'projects.sidetrack': 'Vefsíða fyrir leikinn Sidetrack (Sem ég gerði líka)',
+    'projects.codeclip':
+      'Vefsíða fyrir code snippet sharing með sjálfvirkum syntax detector',
     'projects.rannveig': 'Portfolio vefsíða gerð með NextJS og Hygraph CMS',
     'projects.eli-studio': 'Vefsíða fyrir Eli Studio',
   },

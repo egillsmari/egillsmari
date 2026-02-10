@@ -279,28 +279,20 @@ function HomeContent() {
             </a>
             &nbsp;{t('other.if')}
           </p>
-          <div className="mt-6">
-            <p className="text-left text-base md:text-sm font-medium">
-              {t('other.course')}
-            </p>
-            <a
-              href="https://www.aihero.dev/cohorts/build-deepsearch-in-typescript"
-              target="blank"
-              className="block mt-3 mx-auto max-w-[600px]"
-            >
-              <Image
-                src="/Build Deepsearch in TypeScript.png"
-                width={600}
-                height={424}
-                alt="Build DeepSearch in TypeScript Certificate"
-                className="rounded-lg border border-gray-700 hover:border-blue-500 transition-colors w-full"
-              />
-            </a>
-          </div>
           <p className="mt-8 mb-2 text-left text-base md:text-sm font-medium">
             {t('other.projects')}
           </p>
           <ul className="list-disc ml-4">
+            <li className="pb-2">
+              <a
+                className="underline underline-offset-2 text-white font-bold"
+                href="https://codeclip.link/"
+                target="blank"
+              >
+                Codeclip.link
+              </a>
+              &nbsp;{t('projects.codeclip')}
+            </li>
             <li className="pb-2">
               <a
                 className="underline underline-offset-2 text-white font-bold"
@@ -342,6 +334,42 @@ function HomeContent() {
               &nbsp; {t('projects.gjaldmidlar')}
             </li>
           </ul>
+          <div className="mt-16">
+            <p className="text-center text-base md:text-sm font-medium">
+              {t('other.course')}
+            </p>
+            <a
+              href="https://www.aihero.dev/cohorts/build-deepsearch-in-typescript"
+              target="blank"
+              className="block mt-3 mx-auto max-w-[600px]"
+            >
+              <Image
+                src="/Build Deepsearch in TypeScript.png"
+                width={600}
+                height={424}
+                alt="Build DeepSearch in TypeScript Certificate"
+                className="rounded-lg border border-gray-700 hover:border-blue-500 transition-colors w-full"
+              />
+            </a>
+          </div>
+          <div className="mt-16">
+            <p className="text-center text-base md:text-sm font-medium">
+              {t('other.coursered')}
+            </p>
+            <a
+              href="https://www.raudikrossinn.is"
+              target="blank"
+              className="block mt-3 mx-auto max-w-[600px]"
+            >
+              <Image
+                src="/redkross.png"
+                width={600}
+                height={424}
+                alt="Red Cross Certificate"
+                className="rounded-lg border border-gray-700 hover:border-blue-500 transition-colors w-full"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left"></div>
