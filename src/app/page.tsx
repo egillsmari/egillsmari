@@ -73,7 +73,7 @@ function HomeContent() {
           <h2 className="text-3xl font-bold">{t('about.title')}</h2>
           <p className="mt-2 text-left text-base md:text-sm font-medium">
             {t('about.description')
-              .replace('{AGE}', ageInYears.toPrecision(3))
+              .replace('{AGE}', Math.floor(ageInYears).toString())
               .replace('{WORKING}', statedWorkingInYears.toPrecision(2))}
           </p>
         </div>
